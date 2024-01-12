@@ -1,0 +1,59 @@
+.projectContainer {
+    padding: 10px;
+}
+
+.projectContainer h1 {
+    padding: 10px;
+    font-weight: bold;
+}
+
+.projectCard {
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.projectCard img {
+    width: 350px;
+    height: 200px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 15px;
+}
+
+.projectCard .cardInfo {
+    padding: 20px;
+    line-height: 1;
+}
+
+.projectCard .cardInfo p {
+    font-size: 12px;
+    line-height: 1.2;
+}
+
+.projectCard .cardInfo ul {
+    font-size: 12px;
+    line-height: 1.2;
+}
+
+.cardInfo {
+    flex-direction: column;
+}
+
+.tecnologiesList {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.tecnologiesList img {
+    border-radius: 5px;
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+}

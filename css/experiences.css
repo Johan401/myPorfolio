@@ -1,0 +1,32 @@
+.experienceContainer {
+   padding: 10px;
+}
+  
+.experienceContainer h1 {
+   padding: 10px;
+   font-weight: bold;
+}
+
+.workcontainer {
+   display: flex;
+   flex-direction: column;
+   gap: 30px;
+}
+
+.functions li {
+   font-size: 15px;
+   font-weight: 400;
+}
+
+.workcontainer li h4 {
+   margin: 0;
+   font-size: 22px;
+   font-weight: bold;
+}
+
+.workcontainer li p {
+   margin: 0;
+   font-size: 13px;
+   font-weight: bold;
+   opacity: 0.7;
+}

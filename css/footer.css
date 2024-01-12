@@ -1,0 +1,127 @@
+.emailContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px;
+}
+
+.personalContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.rowContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+}
+
+.rowContainer p {
+    font-size: 13px;
+}
+
+.rowContainer img {
+    width: 25px;
+    height: 25px;
+}
+
+.emailContainer form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 35px;
+}
+
+.emailInput {
+    height: 50px;
+    padding: 0 16px;
+    background: transparent;
+    border-radius: 5px;
+    border: 1px solid #fe4567;
+    animation: shake_541 0.14s 3;
+}
+  
+.emailInput:valid {
+    border-color: #45feaf;
+    animation: none;
+}
+  
+  @keyframes shake_541 {
+    0%, 100% {
+      translate: 0;
+    }
+  
+    25% {
+      translate: 8px 0;
+    }
+  
+    75% {
+      translate: -8px 0;
+    }
+  }
+  
+  .sendButton {
+    width: 105px;
+    --primary-color: #c3c3c3;
+    --secondary-color: #fff;
+    --hover-color: #111;
+    --arrow-width: 10px;
+    --arrow-stroke: 2px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 5px;
+    color: var(--secondary-color);
+    padding: 0.5em 1.8em;
+    background: var(--primary-color);
+    display: flex;
+    transition: 0.2s background;
+    align-items: center;
+    gap: 0.6em;
+    font-weight: bold;
+    margin: 0 auto;
+  }
+  
+  .sendButton .arrow-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .sendButton .arrow {
+    margin-top: 1px;
+    width: var(--arrow-width);
+    background: var(--primary-color);
+    height: var(--arrow-stroke);
+    position: relative;
+    transition: 0.2s;
+  }
+  
+  .sendButton .arrow::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    border: solid var(--secondary-color);
+    border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+    display: inline-block;
+    top: -3px;
+    right: 3px;
+    transition: 0.2s;
+    padding: 3px;
+    transform: rotate(-45deg);
+  }
+  
+  .sendButton:hover {
+    background-color: var(--hover-color);
+  }
+  
+  .sendButton:hover .arrow {
+    background: var(--secondary-color);
+  }
+  
+  .sendButton:hover .arrow:before {
+    right: 0;
+  }
+  

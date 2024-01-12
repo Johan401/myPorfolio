@@ -1,0 +1,130 @@
+/* Header */
+
+.headerContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35px;
+}
+
+
+.headerContainer img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 25px;
+}
+
+.myInformation {
+  width: 450px;
+}
+
+.headerContainer div h1 {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.headerContainer div h1 span {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.headerContainer div p {
+    font-size: 16px;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.resumeButton {
+    --main-focus: #2d8cf0;
+    --font-color: #323232;
+    --bg-color-sub: #dedede;
+    --bg-color: #eee;
+    --main-color: #323232;
+    position: relative;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--main-color);
+    box-shadow: 4px 4px var(--main-color);
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .resumeButton, .button__icon, .button__text {
+    transition: all 0.3s;
+  }
+  
+  .resumeButton .button__text {
+    transform: translateX(26px);
+    color: var(--font-color);
+    font-weight: 600;
+  }
+  
+  .resumeButton .button__icon {
+    position: absolute;
+    transform: translateX(109px);
+    height: 100%;
+    width: 39px;
+    background-color: var(--bg-color-sub);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .resumeButton .svg {
+    width: 20px;
+    fill: var(--main-color);
+  }
+  
+  .resumeButton:hover {
+    background: var(--bg-color);
+  }
+  
+  .resumeButton:hover .button__text {
+    color: transparent;
+  }
+  
+  .resumeButton:hover .button__icon {
+    width: 148px;
+    transform: translateX(0);
+  }
+  
+  .resumeButton:active {
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px var(--main-color);
+  }
+
+
+/* Section 1 End */
+
+@media screen and (max-width: 1024px) {
+    .circle::before {
+        width: 33vw;
+        height: 33vw;
+    }
+    .circle img:nth-child(2) {
+        top: 0rem;
+    }
+}
+@media screen and (max-width: 768px) {
+    .circle::before {
+        width: 41vw;
+        height: 41vw;
+    }
+}
+@media screen and (max-width: 480px) {
+    .circle::before {
+        width: 90vw;
+        height: 85vw;
+    }
+}
