@@ -4,7 +4,7 @@ import Email from './Email'
 
 const Footer = () => {
   return (
-    <footer>
+    <footer id='contact'>
       <Email/>
     </footer>
   )

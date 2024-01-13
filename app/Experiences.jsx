@@ -4,7 +4,7 @@ import { MdOutlineWorkOutline } from "react-icons/md";
 
 const Experiences = () => {
   return (
-    <div className='experienceContainer'>
+    <div id='experience' className='experienceContainer'>
         <h1>Experiences <MdOutlineWorkOutline /></h1>
           <ul className='workcontainer'>
             <li>

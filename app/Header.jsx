@@ -1,5 +1,5 @@
 'use client';
-import React from 'react'
+import React, { useState } from 'react'
 import "../css/header.css"
 import JohanPhoto from "../public/JohanPhoto.png"
 import Image from 'next/image'
@@ -7,12 +7,14 @@ import JohanZamoraResume from './JohanZamoraResume.pdf';
 
 const Header = () => {
 
+  const [isActive, setIsActive] = useState("Home");
+
   const openPdfInNewWindow = () => {
     window.open(JohanZamoraResume, '_blank');
   };
 
   return (
-    <section>
+    <section id='Home'>
       <nav className="navbar navbar-expand-lg ">
         <div className="container">
           <a className="navbar-brand fw-bold dark-color" href="#">
@@ -33,30 +35,31 @@ const Header = () => {
             <ul className="navbar-nav ms-auto mb-2 gap-3 mb-lg-0">
               <li className="nav-item">
                 <a
-                  className="nav-link active fw-semibold"
+                  onClick={()=> setIsActive("Home")}
+                  className={isActive === "Home" ? "nav-link active fw-semibold" : "nav-link fw-medium"}
                   aria-current="page"
-                  href="#"
+                  href="#Home"
                 >
                   Home
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link fw-medium" href="#">
-                  About me
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link fw-medium" href="#projects" passHref>
-                  Projects
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link fw-medium" href="#experiences">
+                <a onClick={()=> setIsActive("Experience")} className={isActive === "Experience" ? "nav-link active fw-semibold" : "nav-link fw-medium"} href="#experience">
                   Experience
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link fw-medium" href="#contact">
+                <a onClick={()=> setIsActive("Projects")} className={isActive === "Projects" ? "nav-link active fw-semibold" : "nav-link fw-medium"} href="#projects" passHref>
+                  Projects
+                </a>
+              </li>
+              <li className="nav-item">
+                <a onClick={()=> setIsActive("About me")} className={isActive === "About me" ? "nav-link active fw-semibold" : "nav-link fw-medium"} href="#certifications">
+                  Certifications
+                </a>
+              </li>
+              <li className="nav-item">
+                <a onClick={()=> setIsActive("Contact me")} className={isActive === "Contact me" ? "nav-link active fw-semibold" : "nav-link fw-medium"} href="#contact">
                   Contact me
                 </a>
               </li>
