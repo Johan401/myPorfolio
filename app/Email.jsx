@@ -1,16 +1,37 @@
 'use client';
-import React from 'react'
+import React, { useRef } from 'react'
 import Image from 'next/image'
 import "../css/footer.css"
 import github from "../public/social/github.png"
 import instagram from "../public/social/instagram.png"
 import linkedin from "../public/social/linkedin.png"
+import emailjs from '@emailjs/browser';
+import { Toaster, toast } from 'sonner'
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Email = () => {
 
+    const form = useRef();
+    const recaptchaRef  = useRef();
+
     const handleSendEmail = (event) => {
         event.preventDefault(); 
-        console.log("Sendding email")
+        const recaptchaValue = recaptchaRef.current.getValue();
+        console.log(recaptchaValue)
+        emailjs.sendForm('service_m6vhowl', 'template_0qmhzse', form.current, 'DyBvbHINSr0R6lKgl')
+        .then((result) => {
+            toast.success('Email has been sent');
+            const formElements = form.current.elements;
+            for (let i = 0; i < formElements.length; i++) {
+                if (formElements[i].type !== 'submit') { 
+                    formElements[i].value = '';
+                }
+            }
+        })
+        .catch((error) => {
+            console.log(error)
+            toast.error('Event has not been sent');
+        });
     }
 
   return (
@@ -30,20 +51,41 @@ const Email = () => {
             </div>
             <p style={{ fontSize: "10px" }}>Privacy & Legal</p>
         </div>
-        <form onSubmit={handleSendEmail}>
+        <form ref={form} onSubmit={handleSendEmail}>
             <h2>Email</h2>
             <input 
                 className='emailInput'
-                id="comment"
-                name="comment"
+                id="user_name"
+                name="user_name"
+                required
+                type='name'
+                placeholder='Can you write your name?'/>
+            <input 
+                className='emailInput'
+                id="user_company"
+                name="user_company"
+                required
+                type='name'
+                placeholder='Where are you work?'/>
+            <input 
+                className='emailInput'
+                id="user_email"
+                required
+                name="user_email"
+                type='email'
                 placeholder='Introduce your email'/>
             <textarea 
                 className='emailInput'
-                id="comment"
-                name="comment"
+                id="user_comment"
+                name="user_comment"
                 rows="4"
+                required
                 type='text' 
-                placeholder='Introduce your comments'/>
+                placeholder='Do you have any feedback for me?'/>
+                <ReCAPTCHA
+                    ref={recaptchaRef}
+                    sitekey="Your client site key"
+                />
             <button className='sendButton'>
                 Send
                 <div class="arrow-wrapper">
@@ -52,6 +94,7 @@ const Email = () => {
                 </div>
             </button>
         </form>
+        <Toaster richColors position="bottom-center"  />
     </div>
   )
 }

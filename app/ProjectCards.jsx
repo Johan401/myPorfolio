@@ -1,3 +1,4 @@
+'use client';
 import React from 'react'
 import "../css/projects.css"
 import ReactPhoto from "../public/React.png"
@@ -19,7 +20,7 @@ const ProjectCards = ( {project} ) => {
             <Image src={HTMLCSSPhoto} alt='HTML'></Image>
             <Image src={NextJsPhoto} alt='NextJS'></Image>
           </div>
-          <button style={{ margin: 0 }} className='sendButton'>
+          <button onClick={() => project.url !== "" ? window.open(project.url, '_blank') : alert("Private Repository")} style={{ margin: 0 }} className='sendButton'>
               Show
               <div class="arrow-wrapper">
                   <div class="arrow"></div>

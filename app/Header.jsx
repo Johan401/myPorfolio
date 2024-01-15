@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import "../css/header.css"
 import JohanPhoto from "../public/JohanPhoto.png"
 import Image from 'next/image'
-import JohanZamoraResume from './JohanZamoraResume.pdf';
+import JohanZamoraResume from '../public/resume/JohanZamoraResume.pdf';
 
 const Header = () => {
 

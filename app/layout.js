@@ -18,7 +18,7 @@ const nunito = Nunito({
 export default function RootLayout({ children }) {
  return (
     <html lang="en">
-      <body style={{ background: "#f4f4f4 " }} className={nunito.className}>
+      <body style={{ background: "#f4f4f4" }} className={nunito.className}>
         {children}
       </body>
     </html>
