@@ -16,14 +16,15 @@
     border-radius: 15px;
 }
 
-.projectCard img {
-    width: 350px;
+.projectImgs {
+    min-width: 350px;
     height: 200px;
     margin-top: auto;
     margin-bottom: auto;
     margin-left: 20px;
     margin-right: 20px;
     border-radius: 15px;
+    object-fit: cover;
 }
 
 .projectCard .cardInfo {

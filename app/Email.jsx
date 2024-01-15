@@ -7,7 +7,6 @@ import instagram from "../public/social/instagram.png"
 import linkedin from "../public/social/linkedin.png"
 import emailjs from '@emailjs/browser';
 import { Toaster, toast } from 'sonner'
-import ReCAPTCHA from "react-google-recaptcha";
 
 const Email = () => {
 
@@ -82,10 +81,6 @@ const Email = () => {
                 required
                 type='text' 
                 placeholder='Do you have any feedback for me?'/>
-                <ReCAPTCHA
-                    ref={recaptchaRef}
-                    sitekey="Your client site key"
-                />
             <button className='sendButton'>
                 Send
                 <div class="arrow-wrapper">
