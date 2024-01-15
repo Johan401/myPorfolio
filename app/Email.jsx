@@ -7,7 +7,6 @@ import instagram from "../public/social/instagram.png"
 import linkedin from "../public/social/linkedin.png"
 import emailjs from '@emailjs/browser';
 import { Toaster, toast } from 'sonner'
-import ReCAPTCHA from "react-google-recaptcha";
 
 const Email = () => {
 
@@ -45,9 +44,9 @@ const Email = () => {
                 <p>Team work</p>
             </div>
             <div className='rowContainer'>
-                <Image src={github}/>
-                <Image src={linkedin}/>
-                <Image src={instagram}/>
+                <Image onClick={() => window.open('https://github.com/Johan401', '_blank')} src={github}/>
+                <Image onClick={() => window.open('https://www.linkedin.com/in/johan-zamora/', '_blank')} src={linkedin}/>
+                <Image onClick={() => window.open('https://www.linkedin.com/in/johan-zamora/', '_blank')} src={instagram}/>
             </div>
             <p style={{ fontSize: "10px" }}>Privacy & Legal</p>
         </div>
@@ -82,10 +81,6 @@ const Email = () => {
                 required
                 type='text' 
                 placeholder='Do you have any feedback for me?'/>
-                <ReCAPTCHA
-                    ref={recaptchaRef}
-                    sitekey="Your client site key"
-                />
             <button className='sendButton'>
                 Send
                 <div class="arrow-wrapper">
