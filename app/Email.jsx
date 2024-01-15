@@ -44,9 +44,9 @@ const Email = () => {
                 <p>Team work</p>
             </div>
             <div className='rowContainer'>
-                <Image src={github}/>
-                <Image src={linkedin}/>
-                <Image src={instagram}/>
+                <Image onClick={() => window.open('https://github.com/Johan401', '_blank')} src={github}/>
+                <Image onClick={() => window.open('https://www.linkedin.com/in/johan-zamora/', '_blank')} src={linkedin}/>
+                <Image onClick={() => window.open('https://www.linkedin.com/in/johan-zamora/', '_blank')} src={instagram}/>
             </div>
             <p style={{ fontSize: "10px" }}>Privacy & Legal</p>
         </div>
