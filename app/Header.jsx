@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import "../css/header.css"
 import JohanPhoto from "../public/JohanPhoto.png"
 import Image from 'next/image'
@@ -8,26 +8,28 @@ import JohanZamoraResume from '../public/resume/JohanZamoraResume.pdf';
 const Header = () => {
 
   const [isActive, setIsActive] = useState("Home");
+  const [showPopover, setShowPopover] = useState(false);
+  const popoverRef = useRef(null);
+
+  const togglePopover = () => {
+      setShowPopover(!showPopover);
+  };
 
   const openPdfInNewWindow = () => {
     window.open(JohanZamoraResume, '_blank');
   };
 
   return (
-    <section id='Home'>
-      <nav className="navbar navbar-expand-lg ">
+    <>
+    <nav id='navMenu' className="navbar navbar-expand-lg">
         <div className="container">
           <a className="navbar-brand fw-bold dark-color" href="#">
             Johan-Porfolio.
           </a>
           <button
+            id='navbar-toggler-button'
             className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+            onClick={togglePopover}
           >
             <span className="navbar-toggler-icon" />
           </button>
@@ -66,7 +68,22 @@ const Header = () => {
             </ul>
           </div>
         </div>
-      </nav>
+        {/* Popover Content */}
+        {showPopover && (
+          <div className="popover" ref={popoverRef}>
+            <ul className="popover-content">
+              <li><a href="#Home" onClick={() => {setIsActive("Home"); setShowPopover(false)}}>Home</a></li>
+              <li><a href="#experience" onClick={() => {setIsActive("Experience"); setShowPopover(false)}}>Experience</a></li>
+              <li><a href="#projects" onClick={() => {setIsActive("Projects"); setShowPopover(false)}}>Projects</a></li>
+              <li><a href="#certifications" onClick={() => {setIsActive("About me"); setShowPopover(false)}}>Certifications</a></li>
+              <li><a href="#contact" onClick={() => {setIsActive("Contact me"); setShowPopover(false)}}>Contact me</a></li>
+            </ul>
+          </div>
+        )}
+      </nav>       
+
+    <section id='Home'>
+      
 
       <div className="headerContainer">
           
@@ -78,7 +95,7 @@ const Header = () => {
               <span>Software Dev / Front-end Dev</span>
             </h1>
             <p>
-            I am a motivated and adaptable Software Developer with a strong commitment to personal and professional growth.
+              I am a motivated and adaptable Software Developer with a strong commitment to personal and professional growth.
             </p>
 
             {/* <div className='tecnologiesList'>
@@ -107,7 +124,7 @@ const Header = () => {
           </div>
 
         </div>
-    </section>
+    </section>    </>
   )
 }
 

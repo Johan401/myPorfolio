@@ -6,3 +6,31 @@
     padding: 10px;
     font-weight: bold;
 }
+
+/* Existing styles for larger screens remain unchanged */
+
+@media (max-width: 768px) {
+    .certificationContainer h1 {
+      font-size: 24px; /* Decrease font size for smaller screens */
+    }
+  
+    .swiperContainer {
+      width: 100%; /* Take full width on smaller screens */
+    }
+  
+    .swiper-slide img {
+      width: 100%; /* Take full width on smaller screens */
+      height: auto; /* Maintain aspect ratio */
+    }
+  
+    .swiper-slide div {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+  
+    .swiper-slide h3 {
+      font-size: 16px; /* Decrease font size for smaller screens */
+    }
+  }
+  

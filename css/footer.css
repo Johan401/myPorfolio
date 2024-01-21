@@ -126,3 +126,42 @@
     right: 0;
   }
   
+
+  /* Existing styles for larger screens remain unchanged */
+
+@media (max-width: 768px) {
+  .emailContainer {
+    grid-template-columns: 1fr; /* Change to a single column layout on smaller screens */
+    text-align: center;
+    padding: 10px;
+  }
+
+  .personalContainer {
+    text-align: center;
+  }
+
+  .rowContainer {
+    gap: 10px;
+  }
+
+  .rowContainer p {
+    font-size: 12px; /* Decrease font size for smaller screens */
+  }
+
+  .rowContainer img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .emailContainer form {
+    padding: 15px; /* Decrease padding for the form */
+  }
+
+  .emailInput {
+    height: 40px; /* Decrease input height for smaller screens */
+  }
+
+  .sendButton .arrow-wrapper {
+    display: none; /* Hide arrow on smaller screens */
+  }
+}

@@ -30,3 +30,24 @@
    font-weight: bold;
    opacity: 0.7;
 }
+
+/* Existing styles for larger screens remain unchanged */
+
+@media (max-width: 768px) {
+   .experienceContainer h1 {
+     font-size: 24px; /* Decrease font size for smaller screens */
+   }
+ 
+   .workcontainer li h4 {
+     font-size: 18px; /* Decrease font size for smaller screens */
+   }
+ 
+   .workcontainer li p {
+     font-size: 12px; /* Decrease font size for smaller screens */
+   }
+ 
+   .functions li {
+     font-size: 13px; /* Decrease font size for smaller screens */
+   }
+ }
+ 

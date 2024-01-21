@@ -1,5 +1,14 @@
 /* Header */
 
+#navMenu {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  background-color: #f4f4f4;
+  box-shadow: 0 1.5px 2px -2px gray;
+}
+
 .headerContainer {
     display: flex;
     flex-direction: row;
@@ -104,27 +113,109 @@
     box-shadow: 0px 0px var(--main-color);
   }
 
+  .custom-dropdown {
+    position: relative;
+  }
+  
+  .custom-dropdown-toggle {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .custom-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+  }
+  
+  .custom-dropdown.show .custom-dropdown-menu {
+    display: block;
+  }
+  
 
-/* Section 1 End */
+@media (max-width: 768px) {
+  .headerContainer {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
 
-@media screen and (max-width: 1024px) {
-    .circle::before {
-        width: 33vw;
-        height: 33vw;
-    }
-    .circle img:nth-child(2) {
-        top: 0rem;
-    }
+  .headerContainer img {
+    width: 150px;
+    height: 150px;
+    margin-right: 0; /* Remove the margin on smaller screens */
+  }
+
+  .myInformation {
+    text-align: center;
+    width: 100%; /* Take full width on smaller screens */
+    margin-top: 20px; /* Adjust margin for spacing */
+  }
+
+  .headerContainer div h1 {
+    font-size: 24px; /* Decrease font size for smaller screens */
+  }
+
+  .headerContainer div h1 span {
+    font-size: 16px; /* Decrease font size for smaller screens */
+  }
+
+  .headerContainer div p {
+    font-size: 14px; /* Decrease font size for smaller screens */
+  }
+
+  .buttonContainer {
+    flex-direction: row; /* Stack buttons vertically on smaller screens */
+    gap: 10px;
+    margin-top: 20px; /* Adjust margin for spacing */
+  }
+
+  .resumeButton .button__text {
+    transform: none; /* Reset the transform for smaller screens */
+  }
+
+  .resumeButton .button__icon {
+    transform: none; /* Reset the transform for smaller screens */
+    width: 100%; /* Take full width on smaller screens */
+  }
 }
-@media screen and (max-width: 768px) {
-    .circle::before {
-        width: 41vw;
-        height: 41vw;
-    }
+
+/* header.css */
+
+.popover {
+  position: absolute;
+  top: 90%; /* Posiciona el popover justo debajo del botón */
+  right: 0;
+  z-index: 1000; /* Asegura que el popover esté en la parte superior */
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  border-radius: 4px;
 }
-@media screen and (max-width: 480px) {
-    .circle::before {
-        width: 90vw;
-        height: 85vw;
-    }
+
+.popover-content {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
+
+.popover-content a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 12px;
+  display: block;
+  padding: 8px;
+  transition: background-color 0.3s;
+}
+
+.popover-content a:hover {
+  background-color: #f2f2f2;
+}
+

@@ -28,8 +28,6 @@ const Certifications = () => {
             navigation
             pagination={{ clickable: true }}
             scrollbar={{ draggable: true }}
-            onSwiper={(swiper) => console.log(swiper)}
-            onSlideChange={() => console.log('slide change')}
         >
         <SwiperSlide>
             <Image style={{ width: "100%", height: "100%", objectFit: "cover" }} src={AWSUdemy}></Image>

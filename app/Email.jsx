@@ -16,7 +16,6 @@ const Email = () => {
     const handleSendEmail = (event) => {
         event.preventDefault(); 
         const recaptchaValue = recaptchaRef.current.getValue();
-        console.log(recaptchaValue)
         emailjs.sendForm('service_m6vhowl', 'template_0qmhzse', form.current, 'DyBvbHINSr0R6lKgl')
         .then((result) => {
             toast.success('Email has been sent');
@@ -28,7 +27,6 @@ const Email = () => {
             }
         })
         .catch((error) => {
-            console.log(error)
             toast.error('Event has not been sent');
         });
     }

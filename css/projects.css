@@ -58,3 +58,53 @@
     width: 30px;
     height: 30px;
 }
+
+/* Existing styles for larger screens remain unchanged */
+
+@media (max-width: 768px) {
+    .projectContainer h1 {
+      font-size: 24px; /* Decrease font size for smaller screens */
+    }
+  
+    .projectCard {
+      flex-direction: column; /* Stack cards vertically on smaller screens */
+      padding: 15px; /* Adjust padding for better spacing */
+    }
+  
+    .projectImgs {
+      min-width: 100%; /* Take full width on smaller screens */
+      height: auto; /* Maintain aspect ratio */
+      margin: 0; /* Reset margin for smaller screens */
+      border-radius: 15px;
+    }
+  
+    .projectCard .cardInfo {
+      padding: 15px; /* Adjust padding for better spacing */
+    }
+  
+    .projectCard .cardInfo h5 {
+      font-size: 18px; /* Decrease font size for smaller screens */
+    }
+  
+    .projectCard .cardInfo p {
+      font-size: 14px; /* Decrease font size for smaller screens */
+      line-height: 1.4;
+    }
+  
+    .projectCard .cardInfo ul {
+      font-size: 14px; /* Decrease font size for smaller screens */
+      line-height: 1.4;
+    }
+  
+    .tecnologiesList {
+      flex-wrap: wrap; /* Allow technologies list to wrap on smaller screens */
+      margin-bottom: 10px;
+    }
+  
+    .tecnologiesList img {
+      width: 25px; /* Decrease image size for smaller screens */
+      height: 25px; /* Decrease image size for smaller screens */
+      margin: 5px;
+    }
+  }
+  
